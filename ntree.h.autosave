@@ -1,0 +1,18 @@
+#ifndef NTREE_H
+#define NTREE_H
+
+#include "node.h"
+using namespace std;
+class NTree
+{
+public:
+    Node * root;
+    int profundidad;
+    
+    NTree(int **,int); //(tablero inicial, profundidad)
+    void calcularJugadas(Node*); //funcion recursiva posibles jugadas con una prfundidad
+    Node* minMax(Node*);
+    vector<int **> movimientos(int **,bool); //(tablero actual, mis jugadas[true] o del oponente[false])
+};
+
+#endif // NTREE_H

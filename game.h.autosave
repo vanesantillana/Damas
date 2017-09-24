@@ -1,0 +1,14 @@
+#ifndef GAME_H
+#define GAME_H
+
+#include "ntree.h"
+class Game
+{
+public:
+    int profundidad;
+    int firstGamer;
+        
+    Game(int,int);
+};
+
+#endif // GAME_H
