@@ -2,6 +2,7 @@
 #define NTREE_H
 
 #include "node.h"
+
 #define INF 50;
 template<typename Tab>
 class NTree
@@ -56,16 +57,7 @@ public:
         return beastValue;
     }
     //(tablero actual, mis jugadas[true] o del oponente[false])
-    vector<Tab> movimientos(Tab r, bool)
-    {
-        vector<Tab> tableros;
-        Tab a,b,c;
-        tableros.push_back(a);
-        tableros.push_back(b);
-        tableros.push_back(c);
 
-        return tableros;
-    }
 
 };
 
