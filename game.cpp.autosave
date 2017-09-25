@@ -7,6 +7,8 @@ Game::Game(){
     tablero=tabla;
     llenar(tablero);
     print(tablero);
+    NTree<vector<vector<int> > > arb(tablero,1);
+    arbol=arb;
 }
 void Game::atributos(int prof,bool gamer)
 {
