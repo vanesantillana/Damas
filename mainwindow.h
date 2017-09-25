@@ -5,6 +5,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsItem>
+#include "game.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,7 +21,11 @@ public:
     QGraphicsTextItem *text;
     QGraphicsLineItem *line;
     explicit MainWindow(QWidget *parent = 0);
+    void startGame();
     ~MainWindow();
+
+private slots:
+    void on_btn_start_clicked();
 
 private:
     Ui::MainWindow *ui;

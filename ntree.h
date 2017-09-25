@@ -29,7 +29,7 @@ public:
     }
     Node<Tab>* minMax(){
         int value=minMaxOperation(root);
-        for (int i = 0; i < root->childs.size(); ++i) {
+        for (int i = 0; i < root->childs.size(); i++) {
             if(root->childs[i]->peso==value)
                 return root->childs[i];
         }
