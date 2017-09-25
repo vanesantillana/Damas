@@ -32,7 +32,8 @@ HEADERS += \
         mainwindow.h \
     node.h \
     ntree.h \
-    game.h
+    game.h \
+    funciones.h
 
 FORMS += \
         mainwindow.ui
