@@ -17,7 +17,9 @@ struct Node
         peso=0;
     }
     int calcularPeso(){
-        peso=A.size()-B.size();
+        int Apeso,Bpeso;
+        calcPeso(Apeso,Bpeso,tablero);
+        peso=Apeso-Bpeso;
         return peso;
     }
     void insertChild(Node<Tab> *temp){
