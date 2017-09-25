@@ -1,28 +1,26 @@
 #include "game.h"
-
-Game::Game(QGraphicsScene *scene,QBrush y,QBrush r,QBrush yo,QBrush maquina,QPen pen,int prof,bool gamer)
-{
-    profundidad=prof;
-    firstGamer=gamer;
+Game::Game(){
     tam=62;
     size=262;
     inicio=200;
-    this->scene=scene;
-    yellowBrush=y;
-    redBrush=r;
-    this->yo=yo;
-    this->maquina=maquina;
-    outlinePen=pen;
+    vector<vector<int> > tabla(8,vector<int>(8,-1));
+    tablero=tabla;
+    llenar(tablero);
+    print(tablero);
+}
+void Game::atributos(int prof,bool gamer)
+{
+    profundidad=prof;
+    firstGamer=gamer;
 }
 
 void Game::start()
 {
-    vector<vector<int> > tablero(8,vector<int>(8,-1));
+    /*
     NTree<vector<vector<int> > > tree(tablero,profundidad);
     tree.cargarJugadas(tree.root);
     cout<<tree.minMax()->peso<<endl;
-    llenar(tablero);
-    print(tablero);
+    */
 
     /*dibuja*/
     Tablero();
@@ -60,6 +58,12 @@ void Game::print(vector<vector<int> > V){
         }
         cout<<endl;
     }
+}
+
+void Game::moverficha(int x, int y, int a, int b){
+    int ficha=tablero[x-1][y-1];
+    tablero[x-1][y-1]=0;
+    tablero[a-1][b-1]=ficha;
 }
 
 void Game::Tablero(){

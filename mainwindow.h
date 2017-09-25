@@ -17,15 +17,15 @@ class MainWindow : public QMainWindow
 
 public:
     QGraphicsScene *scene;
-    QGraphicsRectItem *regtangle;
-    QGraphicsTextItem *text;
-    QGraphicsLineItem *line;
+    Game juego;
     explicit MainWindow(QWidget *parent = 0);
     void startGame();
     ~MainWindow();
 
 private slots:
     void on_btn_start_clicked();
+
+    void on_btn_siguiente_clicked();
 
 private:
     Ui::MainWindow *ui;
