@@ -1,35 +1,28 @@
 #ifndef NODE_H
 #define NODE_H
 
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
+
+template<class Tab>
 
 struct Node
 {
-    int tablero[8][8];
-    vector<Node *> childs;
-    vector<int *> A,B;  //posiciones del tablero con fchas del oponente y mias
+    Tab tablero;
+    vector<Node<Tab> *> childs;
+    vector<int *> A,B;  //posiciones del tablero con fchas del oponente B y mias A
     int peso;
 
-    Node(int **);
-    int calcularPeso(bool);
-    void insertChild(Node *);
+    Node(Tab t){
+        tablero=t;
+    }
+    int calcularPeso(){
+        return A.size()-B.size();
+    }
+    void insertChild(Node<Tab> *temp){
+        childs.push_back(temp);
+    }
 };
 
-Node::Node(int ** tablero)
-{
-    this->tablero=tablero;
-}
 
-int Node::calcularPeso(bool nivel)
-{
-    if(nivel)
-        return A.size()-B.size();
-    return B.size()-A.size();
-}
-
-void Node::insertChild(Node *temp)
-{
-    childs.push_back(temp);
-}
 #endif // NODE_H
